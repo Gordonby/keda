@@ -119,6 +119,8 @@ spec:
       name: keda-operator
     spec:
       serviceAccountName: keda-operator
+      nodeSelector:
+        "beta.kubernetes.io/os": linux      
       containers:
       - name: keda-operator
         image: kedacore/keda:latest
