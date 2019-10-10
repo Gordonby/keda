@@ -21,6 +21,8 @@ spec:
         {{- end }}
     spec:
       serviceAccountName: {{ template "keda.serviceAccountName" . }}
+      nodeSelector:
+        "beta.kubernetes.io/os": linux      
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
